@@ -1,0 +1,58 @@
+version: '3.8'
+services:
+  bash:
+    container_name: bash
+    build: ./bash
+    restart: always
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./file:/home
+
+  database:
+    container_name: database
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'backendTable'
+      #MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'pass123'
+      MYSQL_ROOT_PASSWORD: 'pass123'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - ./storage:/var/lib/mysql
+
+  backend:
+    build: ./backend
+    restart: always
+    container_name: backend
+    ports:
+      - '5000:5000'
+    expose:
+      - '5000'
+    depends_on:
+      - database
+    links:
+      - database
+    volumes:
+      - ./file:/home
+
+  frontend: 
+    build: ./myapp
+    restart: always
+    container_name: frontend
+    stdin_open: true
+    tty: true
+    ports:
+      - '3000:3000'
+    depends_on:
+      - backend
+    links:
+      - backend
+
+volumes:
+  file:
+  storage:

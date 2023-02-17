@@ -1,0 +1,9 @@
+FROM ubuntu:bionic
+
+WORKDIR /single
+
+COPY reportes.sh .
+
+RUN apt-get update && apt-get install -y inotify-tools && chmod +x reportes.sh
+
+CMD ["./reportes.sh"]
