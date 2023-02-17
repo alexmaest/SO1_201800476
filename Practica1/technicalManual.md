@@ -33,7 +33,7 @@ Este como se dió indicios anteriormente, también es el que gestiona las consul
 
 Se utilizó la imagen de `mysql` para proporcionar un servicio de almacenamiento de datos para la aplicación, como bien se conoce en docker se utilizan los volúmenes para la persistencia de datos, por lo cual se utilizó la carpeta `storage` para tener un lugar fisico de almacenamiento y así cada vez que se utilicen los comando `docker-compose up` y `docker-compose down` estos registros sigan percistiendo en el tiempo. Al realizar la aplicación se utilizó una unica entidad como se muestra a continuación:
 
-![Image](/singleObject.png "Registo")
+![Image](singleObject.png "Registo")
 
 
 ### _Script_
