@@ -1,0 +1,14 @@
+FROM golang:alpine
+
+WORKDIR /backend
+
+COPY go.mod go.sum ./
+RUN go mod download && go mod verify
+
+COPY . .
+
+RUN go build -o main .
+
+CMD ["./main"]
+
+# sudo docker run -it -p 1000:1000 backend

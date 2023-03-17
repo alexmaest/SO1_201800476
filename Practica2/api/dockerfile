@@ -1,0 +1,14 @@
+FROM node:19-alpine
+
+WORKDIR /frontend
+
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+
+RUN npm install -g npm@latest
+
+COPY . .
+
+EXPOSE 5000
+
+CMD ["node", "index.js"]
