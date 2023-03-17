@@ -104,7 +104,7 @@ func createProcesses() {
         cmd := exec.Command("getent", "passwd", P.Procesos[i].User)
         out, err := cmd.Output()
         if err != nil {
-            fmt.Println("Error al ejecutar comando:", err)
+            //fmt.Println("Error al ejecutar comando:", err)
             continue
         }
         // Extraer el UID del resultado y asignarlo al proceso
