@@ -5,6 +5,10 @@ const app = express();
 
 app.use(cors({origin: '*',}));
 
+app.use(express.json());
+
+app.use(require('./routes/consultas'));
+
 var boletas = [];
 var sedes = [];
 

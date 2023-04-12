@@ -1,0 +1,5 @@
+# Dependencias utilizadas:
+# npm install @grpc/grpc-js @grpc/proto-loader async google-protobuf lodash minimist
+# npm install mysql2
+
+/node_modules
