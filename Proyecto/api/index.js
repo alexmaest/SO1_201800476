@@ -14,7 +14,7 @@ var sedes = [];
 
 // Conexión con Redis
 const client = new Redis({
-  host: 'localhost',
+  host: 'redis',
   port: 6379,
   password: '',
   db: 0,

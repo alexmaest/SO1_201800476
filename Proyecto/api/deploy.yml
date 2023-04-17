@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: api-server
+  name: api-server
+  namespace: proyecto-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-server
+  minReadySeconds: 20
+  template:
+    metadata:
+      labels:
+        app: api-server
+    spec:
+      containers:
+      - image: alexmaest/apiserver
+        imagePullPolicy: Always
+        name: api-server
+        ports:
+          - containerPort: 5001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: api-server
+  name: api-server
+  namespace: proyecto-namespace
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 5001
+      targetPort: 5001
+  selector:
+    app: api-server
