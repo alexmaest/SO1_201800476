@@ -33,7 +33,7 @@ func main() {
 				http.Error(w, err.Error(), http.StatusBadRequest)
 				return
 			}
-			
+			fmt.Println(v.Sede, v.Municipio, v.Departamento, v.Papeleta, v.Partido)
 			// Obtener la clave y el valor a partir del objeto de estructura Go
 			key := fmt.Sprintf("%d:%s:%s:%s:%s", v.Sede, v.Municipio, v.Departamento, v.Papeleta, v.Partido)
 	
