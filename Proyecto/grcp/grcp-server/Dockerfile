@@ -15,6 +15,6 @@ RUN npm install
 COPY . .
 
 #Puerto a exponer
-EXPOSE 50052
+EXPOSE 50051
 
 CMD ["node", "grcp-server.js"]

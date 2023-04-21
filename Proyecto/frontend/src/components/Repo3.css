@@ -1,0 +1,36 @@
+.Repo3 {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(1fr, 1fr);
+    grid-template-areas: "drop1 drop2";
+}
+
+.dropdown-menu {
+    max-height: 30vh;
+    width: 250px;
+    overflow-y:scroll; 
+}
+  
+.botondropdown {
+    /*background-color: #1d59ce !important;*/
+    background-color: #2E4053 !important;
+    color: white !important;
+    border-color: black !important;
+    width: 250px;
+}
+
+.contenedorpie {
+    /*width: 50%;*/
+    width: 360px;
+    align-items: center;
+    text-align: center;
+    margin-left: 22%;
+}
+
+.contenedorpie2 {
+    /*width: 50%;*/
+    width: 360px;
+    align-items: center;
+    text-align: center;
+    margin-left: 22%;
+}

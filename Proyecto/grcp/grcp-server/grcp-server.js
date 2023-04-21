@@ -27,9 +27,9 @@ function AddVotos(call, callback) {
 function main() {
   var server = new grpc.Server();
   server.addService(info_proto.InfoVotos.service, { AddVotos: AddVotos });
-  server.bindAsync('localhost:50052', grpc.ServerCredentials.createInsecure(), () => {
+  server.bindAsync('localhost:50051', grpc.ServerCredentials.createInsecure(), () => {
     server.start();
-    console.log('grcp server on port 50052')
+    console.log('grcp server on port 50051')
   });
 }
 
