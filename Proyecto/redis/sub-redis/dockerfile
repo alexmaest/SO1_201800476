@@ -10,4 +10,7 @@ COPY . .
 #RUN go build -v -o /usr/local/bin/app ./...
 RUN go build -o main .
 
+EXPOSE 6379
+EXPOSE 3306
+
 CMD ["./main"]

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Chart } from "chart.js/auto";
 
-const API = "http://localhost:5001";
+const API = "http://34.30.222.45:5001";
 
 const Logs = () => {
   const canvasRef = useRef(null);
@@ -58,6 +58,7 @@ const Logs = () => {
         paddingLeft: 300,
       }}
     >
+
       <h2>Top 5 sedes con más votos</h2>
       <div style={{ paddingBottom: 50 }}>
         <canvas

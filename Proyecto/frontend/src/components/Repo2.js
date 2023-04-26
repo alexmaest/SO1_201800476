@@ -3,7 +3,7 @@ import 'chart.js/auto';
 import { Bar } from "react-chartjs-2";
 import './Repo2.css';
 
-const API = "http://localhost:5001/boletas";
+const API = "http://34.30.222.45:5001/boletas";
 let datosboletas;
 let tamtemp = 0;
 

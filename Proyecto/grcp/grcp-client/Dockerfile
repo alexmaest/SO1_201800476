@@ -1,20 +1,16 @@
-# Version node
-FROM node:18
+FROM node:19-alpine
 
-#Creacion del directorio de trabajo
 WORKDIR /app
 
-#Copiando archivos con las librerias necesarias
-COPY package.json ./
-COPY package-lock.json ./
+COPY package.json package.json
+COPY package-lock.json package-lock.json
 
-#Comando para instalar dependencias
-RUN npm install
+RUN npm install -g npm@latest
 
-#Copiar las dependencias y archivos
 COPY . .
 
-#Puerto a exponer
 EXPOSE 8000
+EXPOSE 3306
+EXPOSE 50051
 
 CMD ["node", "index.js"]

@@ -13,13 +13,13 @@ import (
 func main() {
 	// Conexión con Redis
 	client := redis.NewClient(&redis.Options{
-		Addr:     "localhost:6379",
+		Addr:     "redis:6379",
 		Password: "",
 		DB:       0,
 	})
 
 	// Conexión con MySQL
-	db, err := sql.Open("mysql", "root:pass123@tcp(172.17.0.3:3306)/backendTable")
+	db, err := sql.Open("mysql", "root:pass123@tcp(mysql:3306)/backendTable")
 	if err != nil {
 		log.Fatal(err)
 	}

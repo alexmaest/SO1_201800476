@@ -1,0 +1,1 @@
+CREATE TABLE boletas(sede int NOT NULL, municipio VARCHAR(255) NOT NULL, departamento VARCHAR(255) NOT NULL, papeleta VARCHAR(255) NOT NULL, partido VARCHAR(255) NOT NULL);

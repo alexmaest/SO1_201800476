@@ -28,7 +28,7 @@ let suchitepequez = ['Mazatenango', 'Cuyotenango', 'San Francisco Zapotitlan', '
 let totonicapan = ['Totonicapan', 'San Cristobal Totonicapan', 'San Francisco El Alto', 'San Andres Xecul', 'Momostenango', 'Santa Maria Chiquimula', 'Santa Lucia La Reforma', 'San Bartolo']
 let zacapa = ['Cabañas', 'Estanzuela', 'Gualan', 'Huite', 'La Union', 'Rio Hondo', 'San Jorge', 'San Diego', 'Tecultan', 'Usumatlan', 'Zacapa']
 
-const API = "http://localhost:5001/boletas";
+const API = "http://34.30.222.45:5001/boletas";
 
 let datosboletas;
 

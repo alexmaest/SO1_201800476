@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: proyecto-ingress
+  namespace: proyecto-namespace
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: proyecto.com
+    http:
+      paths:
+      - path: /grpc
+        pathType: Prefix
+        backend:
+          service:
+            name: grpcclient
+            port:
+              number: 8000
+      - path: /redis
+        pathType: Prefix
+        backend:
+          service:
+            name: pub-server
+            port:
+              number: 5000
+      

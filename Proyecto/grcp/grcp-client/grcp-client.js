@@ -20,7 +20,7 @@ var target;
 if (argv.target) {
   target = argv.target;
 } else {
-  target = 'localhost:50051';
+  target = 'grpcserver:50051';
 }
 var client = new info_proto.InfoVotos(target,grpc.credentials.createInsecure());
 

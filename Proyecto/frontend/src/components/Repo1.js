@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
+import moment from "moment-timezone";
 
-const API = "http://localhost:5001/boletas";
+const API = "http://34.30.222.45:5001/boletas";
 
 let datosboletas;
 
@@ -22,8 +23,11 @@ function Repo1() {
         return () => clearInterval(intervalo);
     }, []);
 
+    const fechaHoraActual = moment().tz("America/Guatemala").format("DD/MM/YY - HH:mm");
+
     return(
         <div style={{ textAlign: "center", width: 1100, paddingTop: 10, paddingLeft: '20%'}}>
+          <h2>{fechaHoraActual}</h2>
             <div style={{ paddingBottom: 50, height: "400px", overflowY: "scroll", marginBottom: 30 }}>
                 <table style={{ textAlign: "center" }} className="table table-hover">
                 <thead>
