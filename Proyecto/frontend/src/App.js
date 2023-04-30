@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Repo3 from "./components/Repo3";
 import Repo1 from "./components/Repo1";
 import Repo2 from "./components/Repo2";
+import Tiempo from "./components/Tiempo";
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <div className="titulo">
       <h2>Datos almacenados</h2>
     </div>
+    <Tiempo />
     <Repo1></Repo1>
     <div className="titulo">
       <h2>Top 3 de departamentos con mayores votos para presidente</h2>
