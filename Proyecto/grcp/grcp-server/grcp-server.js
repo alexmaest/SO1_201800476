@@ -17,7 +17,7 @@ const mysqlConnection = require('./database');
 
 function AddVotos(call, callback) {
   const query = "insert into boletas(sede, municipio, departamento, papeleta, partido) values (" + call.request.sede + ",'" + call.request.municipio + "','" + call.request.departamento + "','" + call.request.papeleta + "','" + call.request.partido + "');"
-  
+  console.log('Voto insertado en la base de datos');
   mysqlConnection.query(query, function(err, rows, fields) {
     if (err) throw err;
     callback(null, {message: 'Voto insertado en la base de datos'});
@@ -27,7 +27,7 @@ function AddVotos(call, callback) {
 function main() {
   var server = new grpc.Server();
   server.addService(info_proto.InfoVotos.service, { AddVotos: AddVotos });
-  server.bindAsync('localhost:50051', grpc.ServerCredentials.createInsecure(), () => {
+  server.bindAsync('0.0.0.0:50051', grpc.ServerCredentials.createInsecure(), () => {
     server.start();
     console.log('grcp server on port 50051')
   });

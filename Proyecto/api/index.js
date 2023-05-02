@@ -42,12 +42,13 @@ client.on('message', function (channel, message) {
 
 // Ruta de prueba
 app.get('/', (req, res) => {
-  const now = new Date();
-  const day = now.getDate().toString().padStart(2, '0');
-  const month = (now.getMonth() + 1).toString().padStart(2, '0');
-  const year = now.getFullYear().toString().slice(-2);
-  const hours = now.getHours().toString().padStart(2, '0');
-  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const now = new Date().toLocaleString("en-US", {timeZone: "America/Guatemala"});
+  const nowDate = new Date(now);
+  const day = nowDate.getDate().toString().padStart(2, '0');
+  const month = (nowDate.getMonth() + 1).toString().padStart(2, '0');
+  const year = nowDate.getFullYear().toString().slice(-2);
+  const hours = nowDate.getHours().toString().padStart(2, '0');
+  const minutes = nowDate.getMinutes().toString().padStart(2, '0');
   const formattedDate = `${day}/${month}/${year} - ${hours}:${minutes}`;
 
   const reports = {
@@ -55,6 +56,7 @@ app.get('/', (req, res) => {
     reporte5: obtenerTop5Sedes(sedes),
     reporte6: boletas.slice(-5)
   };
+
   res.json(reports);
 });
 

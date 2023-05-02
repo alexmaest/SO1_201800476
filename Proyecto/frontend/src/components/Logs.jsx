@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Chart } from "chart.js/auto";
 
-const API = "http://34.30.222.45:5001";
+const API = "http://34.170.83.247:5001";
 
 const Logs = () => {
   const canvasRef = useRef(null);
   const [report5Data, setReport5] = useState([]);
   const [report6Data, setReport6] = useState([]);
+  const [singleTime, setTime] = useState([]);
 
   useEffect(() => {
     const interval = setInterval(async () => {
@@ -15,6 +16,7 @@ const Logs = () => {
         const data = await response.json();
         setReport5(data["reporte5"]);
         setReport6(data["reporte6"]);
+        setTime(data["time"]);
         console.log(data);
       } catch (error) {
         console.error("Error al obtener los datos: ", error);
@@ -58,6 +60,7 @@ const Logs = () => {
         paddingLeft: 300,
       }}
     >
+      <h2>{singleTime}</h2>
 
       <h2>Top 5 sedes con más votos</h2>
       <div style={{ paddingBottom: 50 }}>

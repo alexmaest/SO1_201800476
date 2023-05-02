@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 //import moment from "moment-timezone";
 
-const API = "http://34.30.222.45:5001/boletas";
+const API = "http://34.170.83.247:5001/boletas";
 
 let datosboletas;
 
